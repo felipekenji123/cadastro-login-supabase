@@ -1,0 +1,95 @@
+:root, 
+ [data-theme="dark"] { 
+  /*[data-theme="dark"]: isso é um seletor de atributo em CSS — seleciona qualquer elemento que tenha o atributo data-theme com valor "dark". 
+  Como definimos isso na tag <html> (que é "ancestral" de tudo na página), todas as variáveis dentro dela ficam disponíveis para o site inteiro. */
+  --cor-fundo: #0f1419;
+  --cor-card: #1a212b;
+  --cor-botao: #6c5dd3;
+  --cor-botao-hover: #564ba0;
+  --cor-fonte: #e4e6eb;
+  --cor-borda: #2c3645;
+  --cor-placeholder: #2c3645;
+  --cor-link: #8a7aef;
+  --fonte-pagina: 'Outfit', 'Segoe UI', sans-serif;
+  --fonte-titulos: 1.5rem;
+  --fonte-textos: 1rem;
+  --transformacao-titulos: uppercase;
+  --transformacao-textos: capitalize;
+}
+
+[data-theme="light"] {
+  --cor-fundo: #eaf1fb;
+  --cor-card: #ffffff;
+  --cor-botao: #6c5dd3;
+  --cor-botao-hover: #564ba0;
+  --cor-fonte: #1a212b;
+  --cor-borda: #d6e2f0;
+  --cor-placeholder: #4e4c4c;
+  --cor-link: #6c5dd3;
+  --fonte-pagina: 'Outfit', 'Segoe UI', sans-serif;
+  /* --transformacao-titulos: uppercase;*/
+  /* --transformacao-textos: capitalize;*/  /*esses dois atributos são herdados de cima então não precisa escrever de novo*/
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 10px;
+  font-family: var(--fonte-pagina);
+  background-color: var(--cor-fundo);
+  color: var(--cor-fonte);
+  transition: background-color 0.3s, color 0.3s; /* transição do modo escuro para o claro e vice versa de forma mais suave*/
+}
+
+h1, h2, label, button {
+  text-transform: var(--transformacao-titulos);
+  font-size: var(--fonte-titulos);
+  text-shadow: 0 0 10px #5e95d8;
+}
+
+button {
+  background-color: var(--cor-botao);
+  color: var(--cor-fonte);
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: var(--cor-botao-hover);
+}
+
+p {
+  text-transform: var(--transformacao-textos);
+  font-size: var(--fonte-textos);
+  text-shadow: 0 0 2px #5e95d8;
+}
+
+a { /* os links do react-roter-dom acabam virando um <a> no jsx*/
+  text-decoration: none;
+  color: var(--cor-link);
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--cor-botao);
+}
+
+input {
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  background-color: var(--cor-fundo);
+  color: var(--cor-fonte);
+  border: 1px solid var(--cor-borda);
+  font-family: var(--fonte-pagina);
+  font-size: 1rem;
+}
+
+input::placeholder {
+  color: var(--cor-placeholder);
+}

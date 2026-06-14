@@ -1,0 +1,33 @@
+.pagina-cadastro {
+  min-height: 100dvh; /* é min ao inves de height fico para que ele cresca se tiver que acomodar mais conteudos*/
+  display: flex;
+   justify-content: center; /*centraliza horizontal */
+  align-items: center; /* centraliza vertical */
+}
+
+.card-cadastro {
+    background-color: var(--cor-card);
+    border: 1px solid var(--cor-borda);
+    padding: 32px;
+    text-align: center;
+    border-radius: 12px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 4px 8px 16px rgba(98, 132, 241, 0.5);
+}
+
+.card-cadastro form { 
+/* .card-cadastro form — seleciona o <form> que está dentro de .card-cadastro ]
+(seletor descendente — qualquer form dentro de .card-cadastro, em qualquer nível) */
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* gap: 16px — espaçamento entre os filhos (sem precisar de margin manual em cada um) */
+}
+
+.card-cadastro form > div { 
+    /* o > é o seletor de filho direto (diferente do espaço, que seleciona qualquer descendente em qualquer nível). 
+    Aqui, selecionamos as <div>s que são filhas diretas do form (cada campo) */
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
