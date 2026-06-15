@@ -54,7 +54,7 @@ function Perfil() {
 
         // O segundo argumento do axios.get é um objeto de CONFIGURAÇÕES da requisição.
         // "headers" são informações extras enviadas junto, fora do corpo principal.
-        const resposta = await axios.get('http://localhost:3000/perfil', {
+        const resposta = await axios.get(`${import.meta.env.VITE_API_URL}/perfil`, { //tem que ser assim pois ao subir o projeto, ele muda a porta, então usamos uma variavel de ambiente
           headers: {
             // O backend espera o token no formato: "Bearer eyJhbGc..."
             // `Bearer ${token}` monta essa string juntando o texto "Bearer " com o valor da variável token.

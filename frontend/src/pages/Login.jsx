@@ -24,7 +24,7 @@ function Login() {
         e.preventDefault();
 
         try {
-            const resposta = await axios.post('http://localhost:3000/login', {
+            const resposta = await axios.post(`${import.meta.env.VITE_API_URL}/login`, { //tem que ser assim pois ao subir o projeto, ele muda a porta, então usamos uma variavel de ambiente
                 email: email,
                 senha: senha,
             });

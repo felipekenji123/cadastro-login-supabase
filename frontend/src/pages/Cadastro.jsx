@@ -56,7 +56,7 @@ function Cadastro() {
         try {
             // axios.post(endereco (para quem está mandando os dados), conteudoDaCarta ( que dados estamos mandando))
              // post é o "tipo de envio" (lembra que no backend criamos a rota com app.post('/cadastro', ...)? Os dois lados — quem envia e quem recebe — precisam "combinar" o mesmo tipo)
-            const resposta = await axios.post('http://localhost:3000/cadastro', {
+            const resposta = await axios.post(`${import.meta.env.VITE_API_URL}/cadastro`, { //tem que ser assim pois ao subir o projeto, ele muda a porta, então usamos uma variavel de ambiente
               //nomes a esqerda são os campos esperados pelo backend, e os valores à direita são as variáveis de estado do frontend.
                 nome_usuario: nomeUsuario, 
                 email: email,
